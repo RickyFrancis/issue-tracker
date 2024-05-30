@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.variable}>
         <AuthProvider>
-          <Theme appearance="light" accentColor="violet">
+          <Theme appearance="light" accentColor="gold">
             <NavBar />
             <main className="p-5">
               <Container>{children}</Container>
