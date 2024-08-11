@@ -31,11 +31,14 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
     <>
       <Select.Root
         defaultValue={issue.assignedToUserId || ''}
-        onValueChange={(userId) => {
-          axios.patch(`/api/issues/${issue.id}`, {
-            assignedToUserId: userId || null,
-          });
-          toast.success('Issue assigned');
+        onValueChange={async (userId) => {
+          try {
+            await axios.patch(`/api/issues/${issue.id}`, {
+              assignedToUserId: userId || null,
+            });
+          } catch (error) {
+            toast.error('Changes could not be saved');
+          }
         }}
       >
         <Select.Trigger placeholder="Assign..." />
