@@ -3,13 +3,13 @@ import { Card, Flex, Text } from '@radix-ui/themes';
 import Link from 'next/link';
 import React from 'react';
 
-interface IssueSummaryProps {
+interface Props {
   open: number;
   inProgress: number;
   closed: number;
 }
 
-const IssueSummary = ({ open, inProgress, closed }: IssueSummaryProps) => {
+const IssueSummary = ({ open, inProgress, closed }: Props) => {
   const containers: {
     label: string;
     value: number;
