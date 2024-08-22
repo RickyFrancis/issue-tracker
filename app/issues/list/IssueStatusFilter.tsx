@@ -36,7 +36,6 @@ const IssueStatusFilter = () => {
       defaultValue={searchParams.get('status') || ''}
       onValueChange={handleStatusChange}
     >
-      <Select.Label>Filter by status</Select.Label>
       <Select.Trigger />
       <Select.Content>
         {statuses.map((status) => (
